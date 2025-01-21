@@ -28,7 +28,7 @@ function App() {
 
     try {
       setLoading(30);
-      const response = await axios.post('https://speech-to-text-developmentserver-back.onrender.com/process-audio', formData, {
+      const response = await axios.post('https://speech-to-text-developmentserver-back-1.onrender.com/process-audio', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -98,7 +98,7 @@ function App() {
     if (result && result.corrected_transcription) {
       try {
         const response = await axios.post(
-          'https://speech-to-text-developmentserver-back.onrender.com/generate-audio',
+          'https://speech-to-text-developmentserver-back-1.onrender.com/generate-audio',
           { text: result.corrected_transcription },
           { responseType: 'blob' } // Important to handle binary data
         );
